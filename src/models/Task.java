@@ -22,7 +22,6 @@ import javax.persistence.Table;
             name = "getTasksCount",
             query = "SELECT COUNT(m) FROM Task AS m"
             )
-
 })
 
 @Table(name = "tasks" )
@@ -75,7 +74,4 @@ public class Task {
     public void setContent(String content) {
         this.content = content;
     }
-
-
-
 }
