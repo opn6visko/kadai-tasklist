@@ -59,11 +59,11 @@ public class UpdateServlet extends HttpServlet {
                 request.getSession().setAttribute("flush", "更新が完了しました。");
                 em.close();
 
-            // セッションスコープ上の不要になったデータを削除
-            request.getSession().removeAttribute("task_id");
+                // セッションスコープ上の不要になったデータを削除
+                request.getSession().removeAttribute("task_id");
 
-            // indexページにリダイレクト
-            response.sendRedirect(request.getContextPath() + "/index");
+                // indexページにリダイレクト
+                response.sendRedirect(request.getContextPath() + "/index");
             }
         }
     }
