@@ -25,9 +25,8 @@ public class DestroyServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            //セッションスコープからメッセージのIDをしゅとくして
-            //該当のIDのメッセージ１件のみをデータベースから取得
-
+            // セッションスコープからメッセージのIDを取得して
+            // 該当のIDのメッセージ１件のみをデータベースから取得
             Task t = em.find(Task.class, (Integer)(request.getSession().getAttribute("task_id")));
 
             em.getTransaction().begin();
@@ -41,9 +40,6 @@ public class DestroyServlet extends HttpServlet {
 
             //indexページへリダイレクト
             response.sendRedirect(request.getContextPath() + "/index");
-
         }
-
     }
-
 }

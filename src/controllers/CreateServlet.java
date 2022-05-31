@@ -51,8 +51,7 @@ public class CreateServlet extends HttpServlet {
 
                 RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/new.jsp");
                 rd.forward(request, response);
-            } else {
-
+            }else {
             //データベースに保存
             em.persist(t);
             em.getTransaction().commit();
